@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.9.1"},"runtime":{"name":"OpenJDK 64-Bit Server VM","version":"17.0.8.1+1"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1713685941","nanos":660129200}}},{"source":{"uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/HotelBooking.feature","data":"Feature: HotelBooking\r\n\r\n@Regression1\r\n  Scenario Outline: TC1_Desktop_Hotel_Booking\r\n    Given User launches booking \"\u003cURL\u003e\" application\r\n    When User click on login then enter \"\u003cUsername\u003e\" and \"\u003cpassword\u003e\"\r\n    When User search and select hotel\r\n    When User enter payment deatils and make payment\r\n    Then Vaildate the Booking Id \r\n\r\n    Examples: \r\n      | URL                                        | Username      | password |\r\n      | https://adactinhotelapp.com/HotelAppBuild2 | SivaTesting29 | 8X6297   |\r\n\r\n@Regression2\r\n  Scenario Outline: TC2_Desktop_Hotel_Booking\r\n    Given User launches booking \"\u003cURL\u003e\" application\r\n    When User click on login then enter \"\u003cUsername\u003e\" and \"\u003cpassword\u003e\"\r\n    When User search and select hotel\r\n    When User enter payment deatils and make payment\r\n    Then Vaildate the Booking Id \r\n\r\n    Examples: \r\n      | URL                                        | Username      | password |\r\n      | https://adactinhotelapp.com/HotelAppBuild2 | SivaTesting29 | 8X6297   |    \r\n\r\n @Sanity\r\n  Scenario Outline: TC4_Desktop_Lufthansa_Booking\r\n    Given User launches booking \"\u003cURL\u003e\" application\r\n\r\n    Examples: \r\n      | URL                                      |\r\n      | https://www.lufthansa.com/in/en/homepage |\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/HotelBooking.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"HotelBooking","children":[{"scenario":{"location":{"line":4,"column":3},"tags":[{"location":{"line":3,"column":1},"name":"@Regression1","id":"2b08dd62-7646-439d-b41b-fded3bcd8cf6"}],"keyword":"Scenario Outline","name":"TC1_Desktop_Hotel_Booking","steps":[{"location":{"line":5,"column":5},"keyword":"Given ","text":"User launches booking \"\u003cURL\u003e\" application","id":"53eab0c7-57ec-4d1d-8921-8be32601fa78"},{"location":{"line":6,"column":5},"keyword":"When ","text":"User click on login then enter \"\u003cUsername\u003e\" and \"\u003cpassword\u003e\"","id":"2997a694-3876-41f1-a1bd-6a907d9c3b22"},{"location":{"line":7,"column":5},"keyword":"When ","text":"User search and select hotel","id":"96653a4d-9dc5-4f06-a0be-c600c699d498"},{"location":{"line":8,"column":5},"keyword":"When ","text":"User enter payment deatils and make payment","id":"421fac0a-4568-4d71-938d-76302ae636d2"},{"location":{"line":9,"column":5},"keyword":"Then ","text":"Vaildate the Booking Id","id":"7c191aab-6cb6-4a46-a9ca-8b0af52fbbd3"}],"examples":[{"location":{"line":11,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":12,"column":7},"cells":[{"location":{"line":12,"column":9},"value":"URL"},{"location":{"line":12,"column":54},"value":"Username"},{"location":{"line":12,"column":70},"value":"password"}],"id":"f981d086-dfbd-498d-ad49-ff80ab3bc7aa"},"tableBody":[{"location":{"line":13,"column":7},"cells":[{"location":{"line":13,"column":9},"value":"https://adactinhotelapp.com/HotelAppBuild2"},{"location":{"line":13,"column":54},"value":"SivaTesting29"},{"location":{"line":13,"column":70},"value":"8X6297"}],"id":"a5ec9fc7-cd79-4184-9930-194d2d2ac4f1"}],"id":"8aa2e527-96e2-410f-936f-3a1e53b58d64"}],"id":"e3b20e22-bc60-40e2-b654-43c4ce1d4f8a"}},{"scenario":{"location":{"line":16,"column":3},"tags":[{"location":{"line":15,"column":1},"name":"@Regression2","id":"f1abc955-12ed-492f-88a4-0c7d13372130"}],"keyword":"Scenario Outline","name":"TC2_Desktop_Hotel_Booking","steps":[{"location":{"line":17,"column":5},"keyword":"Given ","text":"User launches booking \"\u003cURL\u003e\" application","id":"a61147af-f027-4ef0-80b3-f22045e4aea1"},{"location":{"line":18,"column":5},"keyword":"When ","text":"User click on login then enter \"\u003cUsername\u003e\" and \"\u003cpassword\u003e\"","id":"dda6ec74-bcc7-4ce2-a3fd-e57db0be756e"},{"location":{"line":19,"column":5},"keyword":"When ","text":"User search and select hotel","id":"21c75149-92f1-4280-943a-936e39fb65c2"},{"location":{"line":20,"column":5},"keyword":"When ","text":"User enter payment deatils and make payment","id":"ee48e9df-dd49-48f0-876a-dc05d5512ccc"},{"location":{"line":21,"column":5},"keyword":"Then ","text":"Vaildate the Booking Id","id":"eeb0cb6e-a519-4fd6-89e4-bfc37203ae4e"}],"examples":[{"location":{"line":23,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":24,"column":7},"cells":[{"location":{"line":24,"column":9},"value":"URL"},{"location":{"line":24,"column":54},"value":"Username"},{"location":{"line":24,"column":70},"value":"password"}],"id":"7a935cb8-99a6-4dc5-950f-7a6252cbb275"},"tableBody":[{"location":{"line":25,"column":7},"cells":[{"location":{"line":25,"column":9},"value":"https://adactinhotelapp.com/HotelAppBuild2"},{"location":{"line":25,"column":54},"value":"SivaTesting29"},{"location":{"line":25,"column":70},"value":"8X6297"}],"id":"a0c107f4-3d2a-43f5-8514-a4c4e7499db2"}],"id":"9a88afa7-f0eb-4fe8-bdd1-6d005c9a4046"}],"id":"024cfebc-ef10-41fb-9c01-91dd98cc7c46"}},{"scenario":{"location":{"line":28,"column":3},"tags":[{"location":{"line":27,"column":2},"name":"@Sanity","id":"70ef872b-c5b0-4a50-a615-d80cfb3fadc6"}],"keyword":"Scenario Outline","name":"TC4_Desktop_Lufthansa_Booking","steps":[{"location":{"line":29,"column":5},"keyword":"Given ","text":"User launches booking \"\u003cURL\u003e\" application","id":"5cefaa1b-659a-4ff6-a5fb-84a91460396e"}],"examples":[{"location":{"line":31,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":32,"column":7},"cells":[{"location":{"line":32,"column":9},"value":"URL"}],"id":"6d47e61a-5007-4ea8-9d32-dfe9cb5b1751"},"tableBody":[{"location":{"line":33,"column":7},"cells":[{"location":{"line":33,"column":9},"value":"https://www.lufthansa.com/in/en/homepage"}],"id":"a2149806-6a92-47b5-a883-831e611eb56e"}],"id":"35e2f2df-c4f0-436a-9091-4ef1eba40b64"}],"id":"a87068e0-1ba4-4678-a898-3783eab7a9fb"}}]}}},{"pickle":{"id":"7c27b2a6-7435-4e99-9e92-937b0a63d595","uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/HotelBooking.feature","name":"TC1_Desktop_Hotel_Booking","language":"en","steps":[{"text":"User launches booking \"https://adactinhotelapp.com/HotelAppBuild2\" application","id":"c57fbe1d-1e71-4daa-b29f-f91f35f86031","astNodeIds":["53eab0c7-57ec-4d1d-8921-8be32601fa78","a5ec9fc7-cd79-4184-9930-194d2d2ac4f1"]},{"text":"User click on login then enter \"SivaTesting29\" and \"8X6297\"","id":"d38b3791-8c52-4d65-b596-e8a5474ec0b4","astNodeIds":["2997a694-3876-41f1-a1bd-6a907d9c3b22","a5ec9fc7-cd79-4184-9930-194d2d2ac4f1"]},{"text":"User search and select hotel","id":"88ac9de9-fe26-4c66-b1ed-957e9a2d9056","astNodeIds":["96653a4d-9dc5-4f06-a0be-c600c699d498","a5ec9fc7-cd79-4184-9930-194d2d2ac4f1"]},{"text":"User enter payment deatils and make payment","id":"d220dca4-959b-4b39-ba8c-12489ef50390","astNodeIds":["421fac0a-4568-4d71-938d-76302ae636d2","a5ec9fc7-cd79-4184-9930-194d2d2ac4f1"]},{"text":"Vaildate the Booking Id","id":"6a7f23a4-9f28-4577-b3a0-8c1ee19bcd84","astNodeIds":["7c191aab-6cb6-4a46-a9ca-8b0af52fbbd3","a5ec9fc7-cd79-4184-9930-194d2d2ac4f1"]}],"tags":[{"name":"@Regression1","astNodeId":"2b08dd62-7646-439d-b41b-fded3bcd8cf6"}],"astNodeIds":["e3b20e22-bc60-40e2-b654-43c4ce1d4f8a","a5ec9fc7-cd79-4184-9930-194d2d2ac4f1"]}},{"pickle":{"id":"b364a1aa-a8b4-48a8-995c-1991eb603060","uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/HotelBooking.feature","name":"TC2_Desktop_Hotel_Booking","language":"en","steps":[{"text":"User launches booking \"https://adactinhotelapp.com/HotelAppBuild2\" application","id":"acd97ccf-cbca-471d-844f-c1db82a7a86d","astNodeIds":["a61147af-f027-4ef0-80b3-f22045e4aea1","a0c107f4-3d2a-43f5-8514-a4c4e7499db2"]},{"text":"User click on login then enter \"SivaTesting29\" and \"8X6297\"","id":"c0624af8-7d65-41b1-97cc-95bad3c0bb4e","astNodeIds":["dda6ec74-bcc7-4ce2-a3fd-e57db0be756e","a0c107f4-3d2a-43f5-8514-a4c4e7499db2"]},{"text":"User search and select hotel","id":"21a3ffd4-3a7d-44de-8866-d878e75002ac","astNodeIds":["21c75149-92f1-4280-943a-936e39fb65c2","a0c107f4-3d2a-43f5-8514-a4c4e7499db2"]},{"text":"User enter payment deatils and make payment","id":"b78da19a-1658-48ef-8931-a0a8b774a0a7","astNodeIds":["ee48e9df-dd49-48f0-876a-dc05d5512ccc","a0c107f4-3d2a-43f5-8514-a4c4e7499db2"]},{"text":"Vaildate the Booking Id","id":"4384bbd0-5a2c-47f0-8927-8de1b70458f6","astNodeIds":["eeb0cb6e-a519-4fd6-89e4-bfc37203ae4e","a0c107f4-3d2a-43f5-8514-a4c4e7499db2"]}],"tags":[{"name":"@Regression2","astNodeId":"f1abc955-12ed-492f-88a4-0c7d13372130"}],"astNodeIds":["024cfebc-ef10-41fb-9c01-91dd98cc7c46","a0c107f4-3d2a-43f5-8514-a4c4e7499db2"]}},{"pickle":{"id":"f6c86824-07cf-4d43-a9ea-95dff1edc862","uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/HotelBooking.feature","name":"TC4_Desktop_Lufthansa_Booking","language":"en","steps":[{"text":"User launches booking \"https://www.lufthansa.com/in/en/homepage\" application","id":"7a8ff28e-efbb-46f2-b281-37b7010d27f8","astNodeIds":["5cefaa1b-659a-4ff6-a5fb-84a91460396e","a2149806-6a92-47b5-a883-831e611eb56e"]}],"tags":[{"name":"@Sanity","astNodeId":"70ef872b-c5b0-4a50-a615-d80cfb3fadc6"}],"astNodeIds":["a87068e0-1ba4-4678-a898-3783eab7a9fb","a2149806-6a92-47b5-a883-831e611eb56e"]}},{"source":{"uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/LanuchApplication.feature","data":"\n@Skip\nFeature: Title of your feature siva\n@Smoke\n  Scenario: Title of your scenario\n    Given I want to write a step with precondition\n    And some other precondition\n   \n  @Smoke \n  Scenario: Title of your scenario\n    Given I want to write a step with precondition\n    And some other precondition\n   ","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/LanuchApplication.feature","feature":{"location":{"line":3,"column":1},"tags":[{"location":{"line":2,"column":1},"name":"@Skip","id":"628e42ce-a18f-400a-a72a-1d89abd7ed64"}],"language":"en","keyword":"Feature","name":"Title of your feature siva","children":[{"scenario":{"location":{"line":5,"column":3},"tags":[{"location":{"line":4,"column":1},"name":"@Smoke","id":"1265f375-120c-405d-82c3-27b47484ad36"}],"keyword":"Scenario","name":"Title of your scenario","steps":[{"location":{"line":6,"column":5},"keyword":"Given ","text":"I want to write a step with precondition","id":"32fd2616-7d26-47cd-b237-e69f0d7a8542"},{"location":{"line":7,"column":5},"keyword":"And ","text":"some other precondition","id":"b40f3792-febf-4390-b315-b6234bf46cde"}],"id":"cfdfa434-034e-4a42-9c6b-cfdd829a6c57"}},{"scenario":{"location":{"line":10,"column":3},"tags":[{"location":{"line":9,"column":3},"name":"@Smoke","id":"a4d2f6b5-531b-46ab-8ddc-cc37639b4199"}],"keyword":"Scenario","name":"Title of your scenario","steps":[{"location":{"line":11,"column":5},"keyword":"Given ","text":"I want to write a step with precondition","id":"0538a18d-20a7-41b4-9a26-3d31dc2aa7d7"},{"location":{"line":12,"column":5},"keyword":"And ","text":"some other precondition","id":"0b2b3efd-f8e1-4145-89f6-c635e3443b19"}],"id":"f591d6fe-21ad-4452-80e3-1e7473b50ea7"}}]}}},{"pickle":{"id":"1775d242-6241-4ea1-b023-293e4ff52d0e","uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/LanuchApplication.feature","name":"Title of your scenario","language":"en","steps":[{"text":"I want to write a step with precondition","id":"f97aa926-6d08-411a-9d58-f358dcc791b8","astNodeIds":["32fd2616-7d26-47cd-b237-e69f0d7a8542"]},{"text":"some other precondition","id":"bfc817b5-208d-4511-9ced-cd6196e6ce66","astNodeIds":["b40f3792-febf-4390-b315-b6234bf46cde"]}],"tags":[{"name":"@Skip","astNodeId":"628e42ce-a18f-400a-a72a-1d89abd7ed64"},{"name":"@Smoke","astNodeId":"1265f375-120c-405d-82c3-27b47484ad36"}],"astNodeIds":["cfdfa434-034e-4a42-9c6b-cfdd829a6c57"]}},{"pickle":{"id":"7b119096-e346-4b9e-83ba-d8bb4ab1ab94","uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/LanuchApplication.feature","name":"Title of your scenario","language":"en","steps":[{"text":"I want to write a step with precondition","id":"0e65c19b-11b1-4595-9a0f-53679b530c0f","astNodeIds":["0538a18d-20a7-41b4-9a26-3d31dc2aa7d7"]},{"text":"some other precondition","id":"e113c12f-4834-4dc2-8a11-ccd7a30530a8","astNodeIds":["0b2b3efd-f8e1-4145-89f6-c635e3443b19"]}],"tags":[{"name":"@Skip","astNodeId":"628e42ce-a18f-400a-a72a-1d89abd7ed64"},{"name":"@Smoke","astNodeId":"a4d2f6b5-531b-46ab-8ddc-cc37639b4199"}],"astNodeIds":["f591d6fe-21ad-4452-80e3-1e7473b50ea7"]}},{"source":{"uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/Login.feature","data":"Feature: Appliaction Login\r\n\r\n  @Sanity\r\n  Scenario Outline: TC1_Desktop_Hotel_Booking\r\n    Given User launches booking \"\u003cURL\u003e\" application\r\n    When User click on login then enter \"\u003cUsername\u003e\" and \"\u003cpassword\u003e\"\r\n\r\n    Examples: \r\n      | URL                                        | Username      | password |\r\n      | https://adactinhotelapp.com/HotelAppBuild2 | SivaTesting29 | U0263Z   |\r\n\r\n  @Sanity\r\n  Scenario Outline: TC2_Desktop_Swiss_Booking\r\n    Given User launches booking \"\u003cURL\u003e\" application\r\n\r\n    Examples: \r\n      | URL                                  |\r\n      | https://www.swiss.com/in/en/homepage |\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/Login.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Appliaction Login","children":[{"scenario":{"location":{"line":4,"column":3},"tags":[{"location":{"line":3,"column":3},"name":"@Sanity","id":"9d2d1214-3deb-4e4f-8be2-a97efb83813d"}],"keyword":"Scenario Outline","name":"TC1_Desktop_Hotel_Booking","steps":[{"location":{"line":5,"column":5},"keyword":"Given ","text":"User launches booking \"\u003cURL\u003e\" application","id":"2a4fcc08-29b2-4730-a245-ec15608b3514"},{"location":{"line":6,"column":5},"keyword":"When ","text":"User click on login then enter \"\u003cUsername\u003e\" and \"\u003cpassword\u003e\"","id":"07069284-fad3-42af-a6dd-cb2a3f2eead4"}],"examples":[{"location":{"line":8,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":9,"column":7},"cells":[{"location":{"line":9,"column":9},"value":"URL"},{"location":{"line":9,"column":54},"value":"Username"},{"location":{"line":9,"column":70},"value":"password"}],"id":"f95189a4-ec5e-4508-bdb6-c264cca92696"},"tableBody":[{"location":{"line":10,"column":7},"cells":[{"location":{"line":10,"column":9},"value":"https://adactinhotelapp.com/HotelAppBuild2"},{"location":{"line":10,"column":54},"value":"SivaTesting29"},{"location":{"line":10,"column":70},"value":"U0263Z"}],"id":"aa880437-dab0-4e24-8452-a74380ab482a"}],"id":"92f9e4ea-2e2f-4e85-a95d-97d83509d635"}],"id":"613baece-583a-4a3f-9b45-2e322b53bcfc"}},{"scenario":{"location":{"line":13,"column":3},"tags":[{"location":{"line":12,"column":3},"name":"@Sanity","id":"1657bc8e-f7c4-4da8-b315-ff5b2cfcdad8"}],"keyword":"Scenario Outline","name":"TC2_Desktop_Swiss_Booking","steps":[{"location":{"line":14,"column":5},"keyword":"Given ","text":"User launches booking \"\u003cURL\u003e\" application","id":"c525a5d1-a86a-426c-9197-7db9dddf4177"}],"examples":[{"location":{"line":16,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":17,"column":7},"cells":[{"location":{"line":17,"column":9},"value":"URL"}],"id":"73a27c6a-696d-4994-b274-19e016c348d7"},"tableBody":[{"location":{"line":18,"column":7},"cells":[{"location":{"line":18,"column":9},"value":"https://www.swiss.com/in/en/homepage"}],"id":"3da8cd3e-6a5c-492d-993b-35802ac34b5e"}],"id":"fa80a630-7669-43e1-9d09-130a0cc297e5"}],"id":"5e80837f-4097-428a-838c-bc569b5810e2"}}]}}},{"pickle":{"id":"72b7f3e9-691d-4d96-8744-df8f271c936d","uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/Login.feature","name":"TC1_Desktop_Hotel_Booking","language":"en","steps":[{"text":"User launches booking \"https://adactinhotelapp.com/HotelAppBuild2\" application","id":"5c0bf4cd-5a3b-49b6-967f-a387460b5565","astNodeIds":["2a4fcc08-29b2-4730-a245-ec15608b3514","aa880437-dab0-4e24-8452-a74380ab482a"]},{"text":"User click on login then enter \"SivaTesting29\" and \"U0263Z\"","id":"5e522b09-c8a7-4dd1-8fb6-03d274ecf407","astNodeIds":["07069284-fad3-42af-a6dd-cb2a3f2eead4","aa880437-dab0-4e24-8452-a74380ab482a"]}],"tags":[{"name":"@Sanity","astNodeId":"9d2d1214-3deb-4e4f-8be2-a97efb83813d"}],"astNodeIds":["613baece-583a-4a3f-9b45-2e322b53bcfc","aa880437-dab0-4e24-8452-a74380ab482a"]}},{"pickle":{"id":"1467062d-024a-4ca5-8f36-2120c5a1a8a1","uri":"file:///F:/BDD/FrameWorkDraft/src/test/resources/Features/Login.feature","name":"TC2_Desktop_Swiss_Booking","language":"en","steps":[{"text":"User launches booking \"https://www.swiss.com/in/en/homepage\" application","id":"a95eaa77-26d4-40a8-bf2e-e63433e1dfc3","astNodeIds":["c525a5d1-a86a-426c-9197-7db9dddf4177","3da8cd3e-6a5c-492d-993b-35802ac34b5e"]}],"tags":[{"name":"@Sanity
