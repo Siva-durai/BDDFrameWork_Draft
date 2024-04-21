@@ -32,7 +32,7 @@ public class BookingConfirmationPage extends Commonutills{
 				
 			} catch (IOException e) {
 			    log.info("Payment Page Failed");
-			    
+			    log.info("Payment Page Error");
 			    
 			}
 		   
